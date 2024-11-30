@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2> <marquee> Created by Saquib Nazeer © 2024</marquee></h2>
+    <div class="container">
+        <h1 class="title">Expense Tracker</h1>
+
+        <!-- Income and Expense Forms in One Row -->
+        <div class="forms-container">
+            <!-- Income Form -->
+            <form id="income-form" class="form-container">
+                <div class="form">
+                    <h2>Income</h2>
+                    <label for="income-source">Source:</label>
+                    <select id="income-source" required>
+                        <option value="Salary">Salary</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <input type="text" id="income-other" style="display:none" placeholder="Enter other source">
+                    <label for="income-amount">Amount (INR):</label>
+                    <input type="number" id="income-amount" required>
+                    <label for="income-date">Date:</label>
+                    <input type="date" id="income-date" required>
+                    <button type="submit">Add Income</button>
+                </div>
+            </form>
+
+            <!-- Expense Form -->
+            <form id="expense-form" class="form-container">
+                <div class="form">
+                    <h2>Expenses</h2>
+                    <label for="expense-category">Category:</label>
+                    <select id="expense-category" required>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <input type="text" id="expense-other" style="display:none" placeholder="Enter other category">
+                    <label for="expense-amount">Amount (INR):</label>
+                    <input type="number" id="expense-amount" required>
+                    <label for="expense-date">Date:</label>
+                    <input type="date" id="expense-date" required>
+                    <button type="submit">Add Expense</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Date Filter -->
+        <div class="date-filter">
+            <label for="from-date">From:</label>
+            <input type="date" id="from-date">
+            <label for="to-date">To:</label>
+            <input type="date" id="to-date">
+            <button id="filter-btn">Filter</button>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <p>Total Income: ₹<span id="total-income">0</span></p>
+            <p>Total Expenses: ₹<span id="total-expenses">0</span></p>
+            <p>Balance: ₹<span id="balance">0</span></p>
+        </div>
+
+        <!-- Show Expenses Details -->
+        <button id="show-details-btn">Show Expenses</button>
+        <button id="hide-details-btn" style="display:none;">Hide Expenses</button>
+        <div id="details-section" style="display:none;">
+            <h3>Income</h3>
+            <ul id="income-list"></ul> <!-- Add this list for displaying income -->
+            <h3>Expenses</h3>
+            <ul id="expense-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
